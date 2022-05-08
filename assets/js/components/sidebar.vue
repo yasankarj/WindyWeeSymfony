@@ -17,12 +17,12 @@
 
                 <li
                     v-for="category in categories"
-                    :key="category.id"
+                    :key="category['@id']"
                     class="nav-item"
                 >
                     <a
                         class="nav-link"
-                        :href="category.link"
+                        :href="`/category/${category.id}`"
                     >{{ category.name }}</a>
                 </li>
             </ul>
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'Sidebar',
     props: {

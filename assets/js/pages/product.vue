@@ -18,6 +18,7 @@
 <script>
 import CatalogComponent from '@/components/catalog';
 import SidebarComponent from '@/components/sidebar';
+import axios from 'axios';
 
 export default {
     name: 'Product',
@@ -28,23 +29,7 @@ export default {
     data() {
         return {
             sideBarCollapsed: false,
-            categories: [
-                {
-                    id: 1,
-                    name: 'Ladies Wear',
-                    link: '#',
-                },
-                {
-                    id: 2,
-                    name: 'Kids Wear',
-                    link: '#',
-                },
-                {
-                    id: 3,
-                    name: 'Accessories',
-                    link: '#',
-                },
-            ],
+            categories: [],
         };
     },
     computed: {
@@ -59,6 +44,10 @@ export default {
         toggleSidebarCollapsed() {
             this.sideBarCollapsed = !this.sideBarCollapsed;
         },
+    },
+    async mounted() {
+        const response = await axios.get('/api/categories');
+        this.categories = response.data['hydra:member'];
     },
 };
 </script>
