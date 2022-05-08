@@ -29,7 +29,7 @@ that we set in the template! Those are *all* sources of data.
 
 ## Creating the page-context service
 
-So inside `services/`, create a new file called `page-context.js`. I *totally*
+So inside `services/`, create a new file called `page-context-service.js`. I *totally*
 invented that name: the purpose of this file will be to help read data related
 to what "page" we're on - like the current category id.
 

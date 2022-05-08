@@ -52,7 +52,7 @@ global variable. I'll try it in the console: `window.currentProductId`. Nice!
 
 So how could we read this in a Vue component? Well... it's a global variable... so
 we could put `window.currentProductId` *anywhere*. But in the last tutorial, we
-started centralizing these global variables into a `services/page-context.js` file.
+started centralizing these global variables into a `services/page-context-service.js` file.
 As a reminder, `services/` is a directory that - for the most part - holds files
 that make AJAX calls. But in the case of `page-context`, instead of reading data
 from AJAX calls, it reads global variables.

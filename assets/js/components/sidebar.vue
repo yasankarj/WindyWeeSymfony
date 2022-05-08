@@ -7,10 +7,14 @@
             <h5 class="text-center">
                 Categories
             </h5>
+            <loading-component v-show="loading"></loading-component>
             <ul class="nav flex-column mb4">
                 <li class="nav-item">
                     <a
-                        class="nav-link"
+                        :class="{
+                            'nav-link': true,
+                            'selected': currentCategoryId === null,
+                        }"
                         href="/"
                     >All Products</a>
                 </li>
@@ -21,7 +25,10 @@
                     class="nav-item"
                 >
                     <a
-                        class="nav-link"
+                        :class="{
+                            'nav-link': true,
+                            'selected': currentCategoryId === category['@id'],
+                        }"
                         :href="`/category/${category.id}`"
                     >{{ category.name }}</a>
                 </li>
@@ -42,7 +49,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+
+import LoadingComponent from '@/components/loading';
 
 export default {
     name: 'Sidebar',
@@ -54,6 +62,10 @@ export default {
         collapsed: {
             type: Boolean,
             required: true,
+        },
+        currentCategoryId: {
+            type: String,
+            default: null,
         },
     },
     // data() {
@@ -74,6 +86,12 @@ export default {
             }
             return classes;
         },
+        loading() {
+            return this.categories.length === 0;
+        },
+    },
+    components: {
+        LoadingComponent,
     },
     created() {
         console.log(this);
@@ -89,6 +107,9 @@ export default {
   ul {
     li a:hover {
       background: $blue-component-link-hover;
+    }
+    :global li a.selected {
+      background: $light-component-border;
     }
   }
 

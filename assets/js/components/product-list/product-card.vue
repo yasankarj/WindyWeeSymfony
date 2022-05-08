@@ -1,5 +1,5 @@
 <template>
-    <div class="col-xs-12 col-4 mb-2 pb-2">
+    <div class="col-xs-12 col-3 mb-2 pb-2">
         <div :class="$style['product-box']">
             <div :class="$style.image">
                 <img
@@ -62,6 +62,7 @@ export default {
   img {
     width: 100%;
     height: auto;
+    min-height: 312px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
