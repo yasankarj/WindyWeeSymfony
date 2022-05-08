@@ -1,5 +1,5 @@
 <template>
-    <div class="col-xs-12 col-6 mb-2 pb-2">
+    <div class="col-xs-12 col-4 mb-2 pb-2">
         <div :class="$style['product-box']">
             <div :class="$style.image">
                 <img

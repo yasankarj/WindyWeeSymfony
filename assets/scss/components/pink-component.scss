@@ -1,0 +1,6 @@
+@import '../variables/colors';
+
+@mixin pink-component {
+    background-color: $pink-component-background;
+    padding: 30px;
+}

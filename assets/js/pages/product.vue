@@ -31,12 +31,12 @@ export default {
             categories: [
                 {
                     id: 1,
-                    name: 'Storage Devices',
+                    name: 'Ladies Wear',
                     link: '#',
                 },
                 {
                     id: 2,
-                    name: 'Printing Devices',
+                    name: 'Kids Wear',
                     link: '#',
                 },
                 {

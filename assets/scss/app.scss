@@ -1,5 +1,7 @@
 @import './components/black-component';
 @import './components/light-component';
+@import './components/pink-component';
+
 @import './variables/colors';
 @import '~bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
@@ -12,7 +14,7 @@ body {
 }
 
 .header {
-    @include black-component;
+    @include pink-component;
 
     margin-bottom: 30px;
     border-bottom: 2px solid $red-component-border;
@@ -25,7 +27,7 @@ body {
 }
 
 .footer {
-    @include black-component;
+    @include pink-component;
 
     border-top: 2px solid $red-component-border;
     color: #fff;

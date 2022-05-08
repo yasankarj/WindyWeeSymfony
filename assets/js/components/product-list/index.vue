@@ -3,7 +3,7 @@
         <product-card
             v-for="product in products"
             :key="product['@id']"
-            class="col-xs-12 col-6 mb-2 pb-2"
+            class="col-xs-12 col-4 mb-2 pb-2"
             :product="product"
         />
     </div>

@@ -11,7 +11,7 @@
 <script>
 import LegendComponent from '@/components/legend';
 import ProductList from '@/components/product-list';
-import ProductCard from '@/components/product-list'
+
 import axios from 'axios';
 
 export default {
@@ -23,7 +23,7 @@ export default {
     },
     data() {
         return {
-            title: 'Shipping takes 10-12 weeks, and products probably won\'t work',
+            title: 'Contact : Yasanka +94715124094',
             products: [],
         };
     },
