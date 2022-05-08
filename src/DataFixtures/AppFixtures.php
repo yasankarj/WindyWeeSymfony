@@ -22,13 +22,13 @@ class AppFixtures extends Fixture
         $manager->persist($colorBlue);
 
         $category1 = new Category();
-        $category1->setName('Office Supplies');
+        $category1->setName('Frocks');
         $category2 = new Category();
-        $category2->setName('Furniture');
+        $category2->setName('Pants');
         $category3 = new Category();
-        $category3->setName('Breakroom');
+        $category3->setName('Kids - Boys');
         $category4 = new Category();
-        $category4->setName('Snacks');
+        $category4->setName('Kids - Girls');
 
         $manager->persist($category1);
         $manager->persist($category2);
@@ -36,15 +36,16 @@ class AppFixtures extends Fixture
         $manager->persist($category4);
 
         $categories = [
-            'office_supplies' => $category1,
-            'furniture' => $category2,
-            'break_room' => $category3,
+            'frocks' => $category1,
+            'pants' => $category2,
+            'kids_boys' => $category3,
+            'kids_girls' => $category3,
         ];
 
         $brands = [
-            'Faux-Trendster',
-            'Low End Luxury',
-            'Rest at Work',
+            'WindyWee',
+            'ARL Fashions',
+            'Lumini',
         ];
 
         foreach (self::getProductsData() as $productData) {
@@ -77,84 +78,81 @@ class AppFixtures extends Fixture
 
     private static function getProductsData()
     {
-        /* OFFICE SUPPLIES */
         yield [
-            'name' => 'Floppy disk',
-            'description' => 'With 1.44 mb of storage space enjoy your favorite thumbnail photo on the go!',
-            'image' => 'floppy-disc.png',
-            'category' => 'office_supplies'
+            'name' => 'Skirt and Blouse',
+            'description' => 'Gorgeous Skirst and Blouses',
+            'image' => 'skirt_and_blouse.jpg',
+            'category' => 'frocks'
         ];
         yield [
-            'name' => 'Blank CD\'s',
-            'description' => 'Want to share your favorite tunes with a coworker? Then this set of blank cd\'s is for you! Load up your favorite motivational mixtape and share! (cd-rom drive not included)',
-            'image' => 'blank-cds.png',
-            'category' => 'office_supplies'
+            'name' => 'Ladies T Shirts',
+            'description' => 'Trendy looking T Shirts for Ladies out there',
+            'image' => 'tops.jpg',
+            'category' => 'frocks'
         ];
         yield [
-            'name' => 'Disappearing Ink Pens',
-            'description' => 'Write your daily to do list and watch it disappear on its own with our disappearing ink pen',
-            'image' => 'pen.png',
-            'category' => 'office_supplies'
+            'name' => 'Linen Pants',
+            'description' => 'Linen pants for ladies for Casual or Office wear',
+            'image' => 'linen_pants.jpg',
+            'category' => 'pants'
         ];
         yield [
-            'name' => 'Papers',
-            'description' => 'Fresh stack of newspapers from the mid-90\'s for your enjoyment.',
-            'image' => 'papers.png',
-            'category' => 'office_supplies'
+            'name' => 'Kids Checked Shorts',
+            'description' => 'Smart looking checked shorts for your kid',
+            'image' => 'kids_checked_shorts.jpg',
+            'category' => 'kids_boys'
         ];
 
-        /* FURNITURE */
         yield [
-            'name' => 'Inflatable Sofa',
-            'description' => 'Comfortable? No. Easy to move around the office and out to the trashcan? Totally.',
-            'image' => 'inflatable-sofa.png',
-            'category' => 'furniture',
+            'name' => 'Kiddy Cute Frocks',
+            'description' => 'Cutesy little frocks for your kids',
+            'image' => 'kids_frocks.jpg',
+            'category' => 'kids_girls',
             'with_colors' => true,
         ];
         yield [
-            'name' => 'Lamp',
-            'description' => 'Let this lamp light up your day!',
-            'image' => 'dog-lamp.png',
-            'category' => 'furniture',
+            'name' => 'Kiddy Frocks - Vibrant Colors',
+            'description' => 'Let your darling shines in vibrant colors.',
+            'image' => 'kids_frocks_dark.jpg',
+            'category' => 'kids_girls',
         ];
         yield [
-            'name' => 'Hammock',
+            'name' => 'Kiddy Frocks for Nursery',
             'description' => 'Feel sluggish part way through the work day? Get a refresh in our official office hammock. (beach views now included).',
-            'image' => 'hammock.png',
-            'category' => 'furniture',
+            'image' => 'kids_nursery_frocks.jpg',
+            'category' => 'kids_girls',
             'with_colors' => true,
         ];
         yield [
-            'name' => 'Art (Velvis)',
-            'description' => 'Art with texture - there isn\'t a room (or a team) that Elvis can\'t pull together.',
-            'image' => 'velvis.png',
-            'category' => 'furniture',
+            'name' => 'Kids Long Pants',
+            'description' => 'Specially for winter!',
+            'image' => 'kids_pants.jpg',
+            'category' => 'kids_boys',
         ];
         yield [
-            'name' => 'Fake Plant',
-            'description' => 'Bring a little life but not maintenance to your office with our premium faux office plants.',
-            'image' => 'indoor-plant.png',
-            'category' => 'furniture',
+            'name' => 'Kids T Shirts - Paper Print',
+            'description' => 'Paper print art not only for adults, but also for kids.',
+            'image' => 'kids_paper_print.jpg',
+            'category' => 'kids_boys',
         ];
 
-        /* BREAK ROOM */
         yield [
-            'name' => 'Popcorn Machine',
-            'description' => 'Your employees are *already* watching movies all day anyways. You might as well give them popcorn!',
-            'image' => 'popcorn.png',
-            'category' => 'break_room',
+            'name' => 'Kids - Smart T Shirts',
+            'description' => 'Let your kid be the smarty pants',
+            'image' => 'kids_tshirts.jpg',
+            'category' => 'kids_girls',
         ];
         yield [
-            'name' => 'Pour-over Spigot',
-            'description' => 'With our affordable pour-over spigot create the perfect caffeinated beverage to send your team into hyper-drive',
-            'image' => 'spigot.png',
-            'category' => 'break_room',
+            'name' => 'Kids Skinnies',
+            'description' => 'Skinny TOps for cute little ones',
+            'image' => 'kids_skinny.jpg',
+            'category' => 'kids_boys',
         ];
         yield [
-            'name' => '3000 Piece Puzzle',
-            'description' => ' Assorted pieces, may not contain one complete puzzle. Keep your team on their toes!',
-            'image' => 'puzzle.png',
-            'category' => 'break_room',
+            'name' => 'Kids - T Shirts',
+            'description' => 'Your kid is gonna love this',
+            'image' => 'kids_vcolar.jpg',
+            'category' => 'kids_boys',
         ];
     }
 }

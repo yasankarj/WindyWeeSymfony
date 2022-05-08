@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
     <div id="app"></div>
+    {% else %}
+        <span>Login Required!</span>
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}
