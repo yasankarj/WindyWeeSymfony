@@ -1,5 +1,11 @@
 <template>
     <div>
+        <div class="row">
+            <title-component
+                :current-category-id="this.currentCategoryId"
+                :categories="this.categories"
+            />
+        </div>
         <product-list
             :products="products"
             :loading="loading"
@@ -12,8 +18,7 @@
 <script>
 import LegendComponent from '@/components/legend';
 import ProductList from '@/components/product-list';
-
-import axios from 'axios';
+import TitleComponent from '@/components/title';
 import ProductsApiService from '@/services/products-api-service';
 
 export default {
@@ -22,10 +27,15 @@ export default {
     components: {
         LegendComponent,
         ProductList,
+        TitleComponent,
     },
     props: {
         currentCategoryId: {
-            type: String,
+            type: [String, null],
+            default: null,
+        },
+        categories: {
+            type: Array,
             default: null,
         },
     },

@@ -12,6 +12,7 @@
             <div :class="contentClass">
                 <catalog-component
                     :current-category-id="currentCategoryId"
+                    :categories="categories"
                 />
             </div>
         </div>
@@ -21,7 +22,6 @@
 <script>
 import CatalogComponent from '@/components/catalog';
 import SidebarComponent from '@/components/sidebar';
-import axios from 'axios';
 import PageContextService from '@/services/page-context-service';
 import CategoriesApiService from '@/services/categories-api-service';
 
